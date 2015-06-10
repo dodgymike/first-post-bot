@@ -1,8 +1,8 @@
 require 'active_support/all'
 require 'cinch'
 
-server = "irc.freenode.org"
-channel = "#fp-bots"
+server = "irc.atrum.org"
+channel = "#zacon"
 
 bot = Cinch::Bot.new do
   configure do |c|
@@ -28,7 +28,7 @@ bot = Cinch::Bot.new do
       debug "No fp yet"
     elsif(!Time.now.day.eql? $last_fp[:date].day)
       $last_fp[:date] = Time.now
-      Channel("#fp-bots").send("fp")
+      Channel("#zacon").send("fp")
     else
       debug "Waiting for next day: #{how_long} left"
     end
